@@ -1,0 +1,90 @@
+body{
+    background-image: url("bg18.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#logo-bar{
+    border-bottom: 2px solid #8601BF;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#logo-img{
+    height: 8vw;
+    width: 22vw;
+    margin: 0px;
+    margin-top: 0.7vw;
+}
+
+.my-btn{
+    border-image-source: url("bg2.jpg");
+    border-image-width: 3.5px;
+    border-image-slice: 20%;
+    background-color: transparent;
+    color: rgb(202, 244, 251);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.my-btn:hover{
+    background-image: url("bg11.jpg");
+}
+
+.labelcolor{
+    color: seashell;
+}
+
+.password-table{
+    color: white;
+    padding: 0;
+}
+
+.password-table table{
+    border: 1px solid #8F00FF;
+    width: 95%;
+}
+
+.password-table table tr td, .password-table table tr th{
+    border-top: 1px solid #8F00FF;
+    padding: 0.7vw 0;
+    transition: all 0.3s ease;
+}
+
+.password-table table tr th{
+    font-size: 1.6vw;
+    font-weight: 500;
+}
+
+.password-table table tbody tr{
+    transition: all 0.3s ease;
+    font-size: 1.5vw;
+}
+
+.password-table table tbody tr:hover{
+    background-color: #63209B;
+}
+
+.password-table table tbody tr:hover .showpass, .password-table table tbody tr:hover .point{
+    color: white !important;
+}
+
+.point{
+    color:#8F00FF;
+    font-size:2vw;
+}
+.showpass{
+    background-color: transparent;
+    border: 0;
+    color: #DD00FF;
+    text-align: center;
+}
+
+.deco{
+    text-align: center;
+    color: white;
+}
