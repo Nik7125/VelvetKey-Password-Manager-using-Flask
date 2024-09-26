@@ -21,7 +21,6 @@ VelvetKey is a Flask-based web application that allows users to securely store a
 1. Clone the repository:
    ```
    git clone https://github.com/Nik7125/VelvetKey-Password-Manager-using-Flask.git
-   cd velvetkey
    ```
 
 2. Create and activate a virtual environment:
