@@ -78,7 +78,7 @@ velvetkey/
 - **Frontend**: HTML, CSS, JavaScript
 - **Database**: SQLite (easily upgradable to other SQL databases)
 
-Project Link: [https://github.com/yourusername/velvetkey](https://github.com/yourusername/velvetkey)
+Project Link: https://github.com/Nik7125/VelvetKey-Password-Manager-using-Flask
 
 ---
 
