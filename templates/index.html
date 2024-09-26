@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VelvetKey : Your Password Manager</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div id="logo-bar" class="container-fluid p-0">
+        <img src="{{ url_for('static',filename='images/VelvetKey4.gif') }}" alt="logo" id="logo-img">
+        <a href="/create" class="me-5"><button class="btn btn-outline-info">Add New Password</button></a>
+    </div>
+
+    <br>
+
+    <h1 class="deco mt-3">── ⋆⋅☆⋅⋆ ──</h1>
+    <div class="container-fluid password-table my-4">
+        <table align="center">
+            <thead align="center">
+                <tr align="center">
+                    <th></th>
+                    <th>Username</th>
+                    <th>Service Name</th>
+                    <th>E-mail</th>
+                    <th>Password</th>
+                    <th colspan="3">Actions</th> 
+                </tr>
+            </thead>
+            <tbody align="center">
+                {% for item in passwords %}
+                <tr>
+                    <td class="ps-3 point" id="pointer{{item.id}}"><i class="ri-lock-line"></i></td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.service_name}}</td>
+                    <td>{{item.email}}</td>
+                    <td><input type="password" value="{{item.password}}" id="{{item.id}}" class="showpass" disabled></td>
+                    <td><button onclick="show({{item.id}}, 'pointer{{item.id}}')" onmouseout="hide({{item.id}}, 'pointer{{item.id}}')" class="btn btn-outline-primary"><i class="ri-eye-line"></i></td>
+                    <td><a href="/update/{{item.id}}" class="btn btn-outline-success"><i class="ri-edit-box-line" data-bs-toggle="tooltip" title="Update Password" data-bs-placement="left"></i></a></td>
+                    <td class="pe-2"><button class="btn btn-outline-danger" title="Delete Password" data-bs-placement="left" data-bs-toggle="modal" data-bs-target="#myModal{{item.id}}"><i class="ri-delete-bin-6-line"></i></button></td>
+                    <div class="modal fade" id="myModal{{item.id}}">
+                        <div class="modal-dialog">
+                          <div class="modal-content"> 
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title" style="color: black !important;">Are you sure you want to delete?</h4>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <a href="/delete/{{item.id}}" class="btn btn-success">Yes</a>
+                              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                            </div>      
+                          </div>
+                        </div>
+                      </div>
+                </tr>
+                {% endfor %}
+            </tbody> 
+        </table>
+    </div>
+   
+    <br>
+    
+    <script>
+        function show(pass, icon){
+            var x = document.getElementById(pass);
+            x.type = "text";
+            
+            var z = document.getElementById(icon);
+            z.innerHTML = "<i class='ri-lock-unlock-line'></i>"
+        }
+        
+        function hide(pass, icon){
+            var y = document.getElementById(pass);
+            y.type = "password";
+            y.style.color = "#DD00FF";
+            
+            var w = document.getElementById(icon);
+            w.innerHTML = "<i class='ri-lock-line'></i>"
+        }
+    </script>
+    
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+</body>
+</html>
