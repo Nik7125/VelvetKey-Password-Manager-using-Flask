@@ -5,7 +5,6 @@ VelvetKey is a Flask-based web application that allows users to securely store a
 
 ## 🌟 Features
 
-- **Secure Storage**: All passwords are encrypted and stored securely.
 - **User-Friendly Interface**: Easy-to-use web interface for managing your passwords.
 - **CRUD Operations**: Create, Read, Update, and Delete password entries with ease.
 
@@ -78,18 +77,6 @@ velvetkey/
 - **Backend**: Flask, SQLAlchemy
 - **Frontend**: HTML, CSS, JavaScript
 - **Database**: SQLite (easily upgradable to other SQL databases)
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/yourusername/velvetkey/issues).
-
-## 📜 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## 📞 Contact
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
 
 Project Link: [https://github.com/yourusername/velvetkey](https://github.com/yourusername/velvetkey)
 
